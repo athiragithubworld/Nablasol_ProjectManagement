@@ -7,14 +7,15 @@ const NavigationButtons = ({
   handleNextStep,
   handleCreateProject,
 }) => {
-  
-
+  // Function to handle moving to the next step with validation
   const handleNext = () => {
     handleNextStep(); // This will call the validation before moving to the next step
   };
 
+  // Function to handle moving to the previous step
   const handleBack = () => {
     if (step > 1) {
+      // Decrease the step by 1 if it is greater than 1
       setStep(step - 1);
     }
   };
@@ -25,6 +26,7 @@ const NavigationButtons = ({
         step === 1 ? "items-center justify-left" : "justify-between"
       }`}
     >
+      {/* Show the Back button if the current step is greater than or equal to 1 */}
       {step >= 1 && (
         <button
           onClick={handleBack}
@@ -36,6 +38,7 @@ const NavigationButtons = ({
           <span>Back</span>
         </button>
       )}
+      {/* Show the Next button if the current step is less than 4 */}
       {step < 4 && (
         <button
           onClick={handleNext}
@@ -46,6 +49,7 @@ const NavigationButtons = ({
           Next
         </button>
       )}
+      {/* Show the Create Project button if the current step is 4 */}
       {step === 4 && (
         <button
           onClick={handleCreateProject}
