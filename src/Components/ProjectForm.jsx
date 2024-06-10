@@ -19,18 +19,21 @@ const ProjectForm = ({ data, saveData }) => {
     }
   }, []);
 
+  // Handle form input changes
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
     saveData({ ...formData, [name]: value }); // Save data to parent component
   };
 
-   const handleClientChange = (value) => {
-     const updatedData = { ...formData, client: value };
-     setFormData(updatedData);
-     saveData(updatedData); // Save data to parent component
-   };
+  // Handle client dropdown changes
+  const handleClientChange = (value) => {
+    const updatedData = { ...formData, client: value };
+    setFormData(updatedData);
+    saveData(updatedData); // Save data to parent component
+  };
 
+  // Add a new client to the client list
   const addClient = () => {
     if (newClient.trim() !== "") {
       const updatedClients = [...clients, newClient];
@@ -45,6 +48,7 @@ const ProjectForm = ({ data, saveData }) => {
     <form>
       <h2 className="text-2xl font-bold mb-4 text-center">Create a project</h2>
 
+      {/* Project Name Input */}
       <div className="mb-4">
         <label className="block text-gray-700">Project name</label>
         <input
@@ -59,6 +63,7 @@ const ProjectForm = ({ data, saveData }) => {
         />
       </div>
 
+      {/* Client Selection and New Client Input */}
       <div className="flex flex-col gap-2 mb-4">
         <label className="block text-gray-700">Client</label>
         <div className="flex items-center gap-4">
@@ -88,6 +93,7 @@ const ProjectForm = ({ data, saveData }) => {
         </div>
       </div>
 
+      {/* Start Date and End Date Inputs */}
       <div className="mb-4 flex space-x-4">
         <div className="w-1/2">
           <label className="block text-gray-700">Start Date</label>
@@ -113,6 +119,7 @@ const ProjectForm = ({ data, saveData }) => {
         </div>
       </div>
 
+      {/* Notes Input */}
       <div className="mb-4">
         <label className="block text-gray-700">Notes</label>
         <textarea
@@ -122,8 +129,6 @@ const ProjectForm = ({ data, saveData }) => {
           className="mt-1 block w-full border border-gray-300 rounded py-2 px-4"
         />
       </div>
-
-     
     </form>
   );
 };
