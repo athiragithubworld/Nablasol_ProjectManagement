@@ -1,8 +1,19 @@
-# React + Vite
+# Project Management
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a simple project management application built with React and Vite. It allows users to manage their projects by registering them and filling in their personal information.
 
-Currently, two official plugins are available:
+ **Installation**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. Clone the repository: https://github.com/athiragithubworld/Nablasol_ProjectManagement.git  
+2. Navigate to the project directory: cd vite-react-project (folder name where you cloned)
+3. Install React Icons: npm install react-icons
+4. Install dependencies: npm install
+
+**Usage**
+
+5. To start the development server, run:- npm run dev
+
+**Technologies Used**
+Vite + React ,
+Tailwind CSS ,
+React Icons ,
