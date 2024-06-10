@@ -4,6 +4,7 @@ const TasksForm = ({ data, saveData }) => {
   const [tasks, setTasks] = useState(data.tasks || []);
   const [newTask, setNewTask] = useState("");
 
+  // Function to add a new task to the list
   const addTask = () => {
     if (newTask.trim() !== "") {
       const updatedTasks = [...tasks, { name: newTask, completed: false }];
@@ -13,12 +14,14 @@ const TasksForm = ({ data, saveData }) => {
     }
   };
 
+  // Function to remove a task from the list
   const removeTask = (taskName) => {
     const updatedTasks = tasks.filter((task) => task.name !== taskName);
     setTasks(updatedTasks);
     saveData({ tasks: updatedTasks });
   };
 
+  // Function to toggle the completion status of a task
   const toggleTask = (taskName) => {
     const updatedTasks = tasks.map((task) =>
       task.name === taskName ? { ...task, completed: !task.completed } : task
@@ -27,13 +30,10 @@ const TasksForm = ({ data, saveData }) => {
     saveData({ tasks: updatedTasks });
   };
 
-  
-
   return (
-    <form
-     
-    >
+    <form>
       <h2 className="text-2xl font-bold mb-4 text-center">Tasks</h2>
+      {/* Input field and button to add new tasks */}
       <div className="mb-4 flex items-center">
         <input
           type="text"
@@ -50,6 +50,7 @@ const TasksForm = ({ data, saveData }) => {
           Add
         </button>
       </div>
+      {/* List of tasks with options to toggle completion and remove tasks */}
       <ul className="mb-4">
         {tasks.map((task) => (
           <li
@@ -77,7 +78,6 @@ const TasksForm = ({ data, saveData }) => {
           </li>
         ))}
       </ul>
-     
     </form>
   );
 };
