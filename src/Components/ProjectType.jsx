@@ -3,6 +3,7 @@ import React, { useState } from "react";
 const ProjectType = ({ data, saveData }) => {
   const [formData, setFormData] = useState(data);
 
+  // Handle form input changes
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     setFormData({
@@ -15,11 +16,10 @@ const ProjectType = ({ data, saveData }) => {
     });
   };
 
- 
-
   return (
     <form>
       <h2 className="text-2xl font-bold mb-4 text-center">Project type</h2>
+      {/* Project Type Buttons */}
       <div className="mb-4">
         <div className="flex ">
           <button
@@ -63,6 +63,7 @@ const ProjectType = ({ data, saveData }) => {
           </button>
         </div>
       </div>
+      {/* Hourly Rate Input for Time & Materials Project Type */}
       {formData.projectType === "Time & Materials" && (
         <div className="mb-4">
           <label className="block text-gray-700">Hourly</label>
@@ -81,6 +82,7 @@ const ProjectType = ({ data, saveData }) => {
           </div>
         </div>
       )}
+      {/* Budget Input */}
       <div className="mb-4">
         <label className="block text-gray-700">Budget</label>
         <div className="flex gap-2">
@@ -97,6 +99,7 @@ const ProjectType = ({ data, saveData }) => {
           />
         </div>
       </div>
+      {/* Email Alert Input */}
       <div className="mb-4 flex items-center">
         <input
           type="checkbox"
@@ -118,8 +121,6 @@ const ProjectType = ({ data, saveData }) => {
         />
         % of budget
       </div>
-
-     
     </form>
   );
 };
