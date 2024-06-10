@@ -140,7 +140,7 @@ const ProjectCreation = () => {
 
       setProjects(updatedProjects);
       localStorage.setItem("projects", JSON.stringify(updatedProjects));
-      alert("Project Saved Successfully");
+      alert("Project Created Successfully");
 
       // Reset the form after saving
       setProjectData({
